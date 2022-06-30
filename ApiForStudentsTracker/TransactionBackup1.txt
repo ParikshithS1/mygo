@@ -1,0 +1,18 @@
+ProcedureForInertingEmpAndQualification @EmpID=03,@Qualification='sslc',@YearOfPass='2014',@Percentage=90,@Institute='Sheshadripuram High School',@BoardOrUniversity='SSLC Board'
+ProcedureForInertingEmpAndQualification @EmpID=03,@Qualification='P.U.C',@YearOfPass='2016',@Percentage=75,@Institute='M.E.S PU College',@BoardOrUniversity='State PU Board'
+ProcedureForInertingEmpAndQualification @EmpID=03,@Qualification='B.E',@YearOfPass='2020',@Percentage=80,@Institute='Global College',@BoardOrUniversity='Bangalore University'
+
+select * from [dbo].[QualificationOfEmployees]
+
+select * from [dbo].[EMPLOYEEdb]
+
+TransactionForInsertEmployeeWithQualification @EMPID=04,@NAME='Kirthi',@DATEOFBIRTH='1996-03-28',@GENDER='Male',@ADDRESS='sdknsdfklnvdfknv',@STATE='karnataka',@EMAIL='kirthi123@gmail.com',@PHONENUMBER='6564636261',
+@Qualification1='sslc',@YearOfPass1='2012',@Percentage1=80,@Institute1='Sheshadripuram High School',@BoardOrUniversity1='SSLC Board',
+@Qualification2='P.U.C',@YearOfPass2='2014',@Percentage2=75,@Institute2='M.E.S PU College',@BoardOrUniversity2='State PU Board',
+@Qualification3='B.E',@YearOfPass3='2020',@Percentage3=58,@Institute3='Global College',@BoardOrUniversity3='Bangalore University'
+	
+
+SELECT *
+FROM EMPLOYEEdb
+INNER JOIN QualificationOfEmployees
+ON EMPLOYEEdb.EmpId =2 and QualificationOfEmployees.EmpId=2;

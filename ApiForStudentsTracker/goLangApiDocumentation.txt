@@ -1,0 +1,24 @@
+install gorm:
+go get -u github.com/jinzhu/gorm ---(jinzhu)
+
+ go get -u gorm.io/gorm ----(io)
+
+install mod:
+1)go mod init.
+2)go mod init foldername --when directory is different.
+
+install mysql driver:
+ go get -u github.com/go-sql-driver/mysql ----(jinzhu)
+
+
+go get -u gorm.io/driver/mysql----(io)
+
+install mux:
+go get -u github.com/gorilla/mux
+
+
+
+for login api:
+go get github.com/dgrijalva/jwt-go
+go get github.com/gofiber/fiber
+ go get golang.org/x/crypto/bcrypt

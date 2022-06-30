@@ -1,0 +1,69 @@
+1)use DATABASE_NAME (can use this command to create db or to switch between db)
+
+2)db.dropDatabase()  (first switch to the db which should be dropped and use this command to drop)
+
+3)db.createCollection(name, options) (name- name of the colections , options are optional)
+
+4)db.COLLECTION_NAME.drop()  (switch to db in which collection is located and use this command to drop collectiion)
+
+5)inserting document- we got two methods here i)db.COLLECTION_NAME.insert(document)/db.COLLECTION_NAME.insertOne(document)
+					     ii)db.COLLECTION_NAME.insertMany(document)
+
+document in BSON format -db.users.insert({
+... _id : ObjectId("507f191e810c19729de860ea"),
+... title: "MongoDB Overview",
+... description: "MongoDB is no sql database",
+... by: "tutorials point",
+... url: "http://www.tutorialspoint.com",
+... tags: ['mongodb', 'database', 'NoSQL'],
+... likes: 100
+... })
+
+6) Query Document->  db.COLLECTION_NAME.find() 
+		     db.COLLECTION_NAME.find().pretty() - pretty get the documents in a structured manner
+		     db.COLLECTION_NAME.findOne() - brings the first matching record 
+		     db.COLLECTION_NAME.find().limit(number)
+		     db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER)
+
+7)db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+example:
+	db.mycol.update({'title':'MongoDB Overview'},{$set:{'title':'New MongoDB Tutorial'}})
+----------------------------------------------------
+MongoDB Save() Method
+The save() method replaces the existing document with the new document passed in the save() method.
+
+>db.COLLECTION_NAME.save({_id:ObjectId(),NEW_DATA})
+------------------------------------------------------
+MongoDB findOneAndUpdate() method
+The findOneAndUpdate() method updates the values in the existing document.
+
+>db.COLLECTION_NAME.findOneAndUpdate(SELECTIOIN_CRITERIA, UPDATED_DATA)
+---------------------------------------------------------
+
+MongoDB updateOne() method
+This methods updates a single document which matches the given filter.
+
+>db.COLLECTION_NAME.updateOne(<filter>, <update>)
+------------------------------------------------------------------
+MongoDB updateMany() method
+The updateMany() method updates all the documents that matches the given filter.
+
+>db.COLLECTION_NAME.update(<filter>, <update>)
+-----------------------------------------------------------------------------
+
+
+
+8)Deletion of document - i)db.COLLECTION_NAME.remove(DELLETION_CRITTERIA)
+                        ii)db.COLLECTION_NAME.remove(DELETION_CRITERIA,1) -remove one among many duplicated document
+		       iii)Remove All Documents
+                           If you don't specify deletion criteria, then MongoDB will delete whole documents from the collection. This is equivalent of SQL's truncate command.
+
+                           > db.mycol.remove({})
+
+9)sorting documents -db.COLLECTION_NAME.find().sort({KEY:1}) (ascending order)
+			db.COLLECTION_NAME.find().sort({KEY:1}) (descending order)
+
+	example: db.mycol.find().sort({"title":-1})
+
+10)
+			
